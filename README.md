@@ -13,22 +13,22 @@
 </p>
 
 <p>
-소스코드
+소스코드<br>
 &nbsp;&nbsp;&nbsp;&nbsp;개발자가 컴퓨터와 대화한 채팅.
 </p>
 
 <p>
-소스파일
+소스파일<br>
 &nbsp;&nbsp;&nbsp;&nbsp;소스코드가 작성된 파일
 </p>
 
 <p>
-컴파일
+컴파일<br>
 &nbsp;&nbsp;&nbsp;&nbsp;사람의 언어를 컴퓨터 언어로 번역하는 작업.
 </p>
 
 <p>
-컴파일러
+컴파일러<br>
 &nbsp;&nbsp;&nbsp;&nbsp;컴파일 해주는 것(번역기).
 </p>
 
