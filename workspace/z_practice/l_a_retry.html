@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트01</title>
+    <style>
+        body {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS 스타일 동적 변경</h3>
+    <hr />
+    <p>변경될 요소</p>
+    <input type="button" value="스타일 변경" />
+</body>
+<script>
+    // type을 이용해서 button 선언하고 상대적 위치로 p를 선언하고
+    // 클릭을 했을 때 글씨가 30px, 너비 200px, 1px의 점선 magenta색의 경계를 만들고 
+    // 글자를 가운데 정렬 시켜보세용
+    const button = document.querySelector("input[type=button]");
+    const p = button.previousElementSibling;
+
+    button.addEventListener("click", () => {
+        with (p.style) {
+            fontSize = "30px";
+            width = "200px";
+            border = "1px dashed magenta";
+            textAlign = "center";
+        }
+    });
+</script>
+</html>

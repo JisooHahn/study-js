@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 01</title>
+    <style>
+        body{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS 스타일 동적 변경</h3>
+    <hr />
+    <p>변경될 요소</p>
+    <input type="button" value="스타일 변경" />
+</body>
+<script>
+    // type이 button인 input을 선택한다.. 개체의 특성은 대괄호[]
+    const button = document.querySelector("input[type=button]")
+    // input의 바로 앞 형제 p
+    const p = button.previousElementSibling;
+    
+    // addEventLisner는 이벤트 리스터를 추가하는 메서드
+    // 여기서 click 이벤트를 사용하고 있음
+    // () => {...} 중괄호 안의 패러미터는 클릭 이벤트가 발생할 때 실행됨
+    button.addEventListener("click", () => {
+        with (p.style) {
+            fontSize = "30px";
+            width = "200px";
+            border = "1px dashed magenta";
+            textAlign = "center";
+        }
+    });
+</script>
+</html>

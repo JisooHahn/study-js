@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>포커스, 블러 이벤트</title>
+        <style>
+            input {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>포커스, 블러 이벤트</h1>
+        <form action="" name="info">
+            <input type="text" name="birth" placeholder="생년월일" />
+            <input type="text" name="phone" placeholder="핸드폰 번호" />
+        </form>
+    </body>
+    <script>
+        // form에 name을 붙이면 js에서 별도의 선언 없이 사용 가능
+        const birth = info.birth;
+        const phone = info.phone;
+
+        const birthRegex =
+            // /^$/; 문자열 전체가 이 패턴과 일치해야 함
+            // \d{2}: 뒤에 두 자리 숫자가 추가로 옴(예: 00, 01, ..., 99).
+            // 1900~1999년도, 2000~2099년 .(점은 선택) 01-09 혹은 11-12 . 01-09 or
+            // 10-29 or 30-31
+            // 구분할 때 역슬래시와 물음표를 치자
+            /^(19[0-9][0-9]|20\d{2})\.?(0[1-9]|1[1-2])\.?(0[1-9]|[1-2][0-9]|3[0-1])$/;
+
+        // 01[0-9] -(작대기 포함) 3자리 혹은 4자리 숫자 - 4자리 숫자
+        const phoneRegex = /^01([0|1|6|7|8|9])\-?([0-9]{3,4})\-?([0-9]{4})$/;
+
+        // blur 이벤트 리스너 추가, blur 이벤트는 input에서 포커스가 빠질 때 발생
+        birth.addEventListner("blur", () => {
+            // birth.value가 birthRegex의 조건에 부합하는지 검증
+            if (birthRegex.test(birth.value)) {
+                // true면 테두리 색상 파란색으로 설정
+                birth.style.border = "1px solid blue";
+                // 그 후 false 조건이 실행되지 않게 함수 종료
+                return;
+            }
+            birth.style.border = "1px solid red";
+
+            // 값이 검증되지 않으면 input 밖으로 커서가 못 나가게 함
+            birth.focus();
+        });
+
+        phone.addEventListener("blur", () => {
+            if (phoneRegex.test(phone.value)) {
+                phone.style.border = "1px solid blue";
+                return;
+            }
+            phone.style.border = "1px solid red";
+            phone.focus();
+        });
+    </script>
+</html>

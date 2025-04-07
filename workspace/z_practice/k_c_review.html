@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자로 선택 실습</title>
+</head>
+<body>
+    <h1>CSS 선택자로 선택</h1>
+        <p>갖고 싶은 위시 리스트</p>
+        <ul>
+            <li>곰인형</li>
+            <li>최신 핸드폰</li>
+            <li>멋진 자동차</li>
+            <li>넓은 집</li>
+            <li>멋진 집</li>
+            <li>보석</li>
+        </ul>
+</body>
+<script>
+    // "집"이 들어간 요소만 다음 스타일로 변경한다.
+    // fontSize: 30px, color: pink
+
+    // ul 요소 안에 있는 모든 li 요소를 선택하여 NodeList라는 객체로 반환
+    // items에 결과가 저장된다.
+    // querySelector는 getElements처럼 따로 forEach같은 메서드를 정의할 필요 없음.
+    const items = document.querySelectorAll("ul li");
+    items.forEach((item) => {
+        // 집이 포함될 때만 실행되는 코드
+        if(item.innerText.includes("집")) {
+            // with를 사용하면 따로 item.style.fontSize처럼 반복해서 쓰지 않게된다.
+            // item.style로 묶어주는 느낌
+            with (item.style) {
+                fontSize = "30px";
+                color = "pink";
+            }
+        }
+    });
+</script>
+</html>

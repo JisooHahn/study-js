@@ -1,0 +1,2255 @@
+@font-face {
+    font-family: 'pretendard';
+    src: url(fonts/PretendardVariable.ttf) format('truetype');
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+html {
+    display: block;
+    font-size: 14px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+a, div {
+    text-decoration: none;
+}
+
+a {
+    background: transparent;
+    color: #FA6462;
+}
+
+p {
+    margin: 0em 0em 1em;
+    line-height: 1.7em;
+}
+
+h3, p, div {
+    word-break: break-all;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+body {
+    font-family: 'pretendard';
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f5f5;
+    font-size: 14px;
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+    position: relative;
+    overflow: visible;
+    display: block;
+}
+
+.contentsNavigation{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white; /* 배경색 추가 */
+    width: 100%; /* 너비 설정 */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+}
+
+button {
+    overflow: visible;
+    text-transform: none;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    min-height: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1.2857em;
+    margin: calc(2rem - 0.14285em) 0em 1rem;
+    font-weight: bold;
+    padding: 0em;
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child {
+    margin-bottom: 0em;
+}
+
+img {
+    border: 0;
+}
+
+.scrollTopBtnWrapper{
+    z-index: 999;
+    /* 나중에 js로 display옵션 보이게 바꿔야함 */
+    /* display: none; */
+    display: block;
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    bottom: 24px;
+    right: 24px;
+}
+
+.scrollTopButton{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    border-radius: 50%;
+    text-indent: -100em;
+    overflow: hidden;
+    padding: 0px;
+    outline: none;
+    position: absolute;
+    background: transparent;
+    z-index: 2;
+}
+
+.scrollTopButton{
+    position: relative;
+}
+
+.scrollTopStyledIcon{
+    opacity: 0.8 !important;
+    position: absolute;
+    cursor: pointer;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(208, 208, 208);
+    transition-property: opacity, border;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0px !important;
+}
+
+.scrollTopStyledIcon>svg{
+    opacity: 0.5;
+    width: 24px;
+    fill: rgb(13,13,13);
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+.headerLayout{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 6px;
+    padding: 0 20px;
+}
+
+.projectIntroduction{
+    flex-grow: 1;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.projectContents{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.headerWrapper{
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 105px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headerUpperLayout{
+    max-width: 1160px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    max-height: 72px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerFixed{
+    position: relative;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 56px;
+    z-index: 999;
+}
+
+.logoWrapper{
+    display: flex;
+    width: 132px;
+    min-height: 35px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+}
+
+.logoWrapper>svg{
+    height: 36px;
+    overflow: hidden;
+}
+
+.statusWrapper{
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+}
+
+.projectEditorButton{
+    padding: 16px;
+    display: inline-flex;
+    width: auto;
+    color: rgb(25, 25, 25);
+    font-size: 12px;
+    line-height: 28px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.userProfileButtonWrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.userProfileButton{
+    margin-left: 10px;
+    position: relative;
+    padding: 16px;
+    display: inline-flex;
+    width: auto;
+    min-width: 30px;
+    max-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(223, 223, 223);
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.userAvatar{
+    position: relative;
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    color: rgb(25, 25, 25);
+    font-size: 12px;
+    line-height: 28px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(223, 223, 223);
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-weight: bold;
+    background: rgb(217, 217, 217);
+    margin: 0px;
+    padding: 0px;
+}
+
+.userAvatar>svg{
+    overflow: hidden;
+    display: flex;
+    min-width: 48px;
+    transform: scale(0.5);
+    cursor: pointer;
+}
+
+.userAvatar>svg>path {
+    fill: white;
+}
+
+.userText{
+    margin-left: 10px;
+    display: inline-flex;
+    color: rgb(25, 25, 25);
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.headerSearchBar{
+    max-width: 1160px;
+    padding: 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 56px;
+    background: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categorySection{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 56px;
+    align-items: center;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    user-select: none;
+}
+
+.searchInputWrapper{
+    z-index: 100;
+    position: relative;
+    padding: 0px 30px 0px 16px;
+    display: inline-flex;
+    width: 260px;
+    height: 36px;
+    background: rgb(243, 243, 243);
+    align-items: center;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.categoryWrapper{
+    padding: 0 6px;
+    min-height: 56px;
+    position: relative;
+    margin-right: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: rgb(13, 13, 13);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.iconWrapper{
+    overflow: hidden;
+    position: relative;
+    display: inline-flex;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.caregoryWrapper.firstCategory{
+    padding: 0;
+}
+
+.categorySvg{
+    margin: 0 8px 0 0;
+}
+
+.categoryWrapper:last-child>svg{
+    overflow: hidden;
+    margin-right: 4px;
+}
+
+.headerSearchInput{
+    border: none;
+    font-size: 12px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    background: rgb(243, 243, 243);
+    color: rgb(51, 51, 51);
+    appearance: none;
+    outline: none;
+}
+
+.headerSearchButton{
+    position: absolute;
+    right: 10px;
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center
+}
+
+.projectIntroContainer{
+    width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    height: auto;
+    padding: 0;
+}
+
+.projectIntroWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1032px;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+}
+
+.projectOutline{
+    height: 214px;
+    padding-bottom: 0px;
+    align-items: center;
+    order: 1;
+    width: 100%;
+    display: flex;
+}
+
+.projectMainColumn{
+    width: 594px;
+    height: auto;
+    order: 2;
+    margin: 0;
+}
+
+.projectSubColumn{
+    margin: 0 0 0 69px;
+    order: 3;
+    flex: 1 1 0px;
+    width: 100%;
+}
+
+.projectOutlineInner{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.projectIntroTitle{
+    margin-bottom: 0em;
+    font-size: 2.8rem;
+    margin: 1.5rem 0px 1rem;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.projectIntroCategory{
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem;
+    color: rgb(117, 117, 117);
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(239, 239, 239);
+    border-radius: 2px;
+}
+
+.projectCoverImageFigure{
+    display: block;
+    margin: 0px;
+    height: 100%;
+}
+
+.projectCoverImage{
+    max-height: 594px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 244px;
+    margin: 0;
+    padding: 0;
+    background: url(https://static.tumblbug.com/wpa/b092e02bfb24cf713ec1d34b712d2528.png) 
+    center center no-repeat rgb(252, 252, 252);
+    display: inline-flex;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.projectCoverImage>img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.fundingStatusWrapper{
+    min-height: 280px;
+    width: 100%;
+    display: block;
+    margin: 0px 0px 8px;
+    padding: 0px;
+}
+
+.fundingInfoWrapper{
+    margin: 0 0 1rem;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.projectButtons{
+    display: block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.projectIntroMetric {
+    margin: 0 0 1.75rem;
+}
+
+.projectIntroMetric:nth-child(2){
+    padding: 0;
+}
+
+.projectStatusTitle{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+}
+
+.projectStatusValue{
+    font-size: 2.75rem;
+    letter-spacing: 0.5px;
+}
+
+.projectIntroPrice{
+    white-space: nowrap;
+}
+
+.projectIntroFundingRate{
+    font-size: 1.3rem;
+    display: inline;
+    font-weight: bolder;
+    word-break: keep-all;
+}
+
+.projectIntroSmall{
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    white-space: nowrap;
+}
+
+.projectIntroStatusTitle{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+}
+
+.projectIntroStatusValue{
+    font-size: 2.75rem;
+    letter-spacing: 0.5px;
+}
+
+.fundingInfoWrap{
+    padding: 20px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.fundingInfoItem{
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fundingInfoTitle{
+    width: 86px;
+    color: rgb(28, 28, 28);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.fundingInfoDesc{
+    margin: 0px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    color: rgb(28, 28, 28);
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 120%;
+}
+
+.fundingInfoDdayLabel{
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-left: 6px;
+    padding: 2px 6px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 2px;
+    color: rgb(84, 84, 84);
+}
+
+.projectProgressWrapper{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.fundingInfoTitle3{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 86px;
+    color: rgb(28, 28, 28);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.questionIcon{
+    display: inline-flex;
+    align-self: center;
+}
+
+.questionIcon>svg{
+    overflow: hidden;
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    fill: rgb(235,75,56);
+}
+
+.commonLayer{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    background: #fff;
+    color: #3d3d3d;
+}
+
+.projectProgressContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    height: 67px;
+}
+
+.progressStatusItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 80px;
+    cursor: default;
+}
+
+.progressIconWrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progressStepLabel{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.progressStyledCheckIcon{
+    overflow: hidden;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: rgb(28,28,28);
+    border: 1px solid rgb(28,28,28);
+}
+
+.progressStyledCheckIcon::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: calc(100% + 40px);
+    height: 2px;
+    background-color: rgb(228, 228, 228);
+    display: block;
+}
+
+.progressStyledCheckIconW{
+    overflow: hidden;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.progressIconWrapper::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: calc(100% + 40px);
+    height: 2px;
+    background-color: rgb(228, 228, 228);
+    display: block;
+}
+
+.noAfter::after{
+    display: none;
+}
+
+.progressStepLabelW{
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 120%;
+}
+
+.projectButtonsInner{
+    padding: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.introPrimaryButton{
+    flex-grow: 1;
+    order: 3;
+    position: relative;
+}
+
+.toolTipWrapper{
+    order: 1;
+    position: relative;
+}
+
+.projectIntroTertiary{
+    position: relative;
+    order: 2;
+    padding: 0.5rem 0;
+    margin: 0 6px;
+}
+
+.pledgeButtonWrapper{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.CTAButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 0%;
+}
+
+.pledgeButtonContainer{
+    flex: 1 1 0%;
+}
+
+.fundingButton{
+    color: rgb(158, 158, 158);
+    background-color: rgb(228, 228, 228);
+    width: 100%;
+    height: 48px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.introSecondaryButton{
+    padding: 0.5rem 0;
+}
+
+.likeButtonWrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 48px;
+    background: white;
+    cursor: pointer;
+}
+
+.detailLikeButton{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.likeLine{
+    display: inline-flex;
+    align-self: center;
+}
+
+.likeLine>svg{
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    fill: rgb(109,109,109) !important;
+}
+
+.likeCount{
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(84,84,84);
+    text-align: center;
+}
+
+.shareSNSButtonWrap{
+    width: 44px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.shareSNSButton{
+    font-size: 20px;
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 1em;
+    outline: none;
+    border: none;
+    vertical-align: baseline;
+    border-radius: 0.285714rem;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.svgIcon2{
+    display: inline-flex;
+    align-self: center;
+}
+
+.svgIcon2>svg{
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    fill: rgb(109,109,109);
+}
+
+.shareCount{
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(84, 84, 84);
+    text-align: center;
+}
+
+.projectContentsNavigation{
+    height: 56px;
+    padding: 0px 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    z-index: 10;
+}
+
+.navigationInner{
+    height: 100%;
+    width: 1040px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navLeft{
+    width: auto;
+    height: 100%;
+    margin: 0px 1rem;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    align-items: stretch;
+    float: left;
+    overflow: auto;
+}
+
+.navItem{
+    margin-right: 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0.5rem 0px;
+    font: 700 14px / 22px 'Pretendard', sans-serif;
+    color: rgb(158, 158, 158);
+}
+
+.communityPostAmount{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: -0.2rem -0.1rem 0 0.2rem;
+}
+
+.navigationIconWrapper{
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+/* .navigationFixedBar{
+    display: block;
+    background-color: rgb(255, 255, 255);
+    z-index: 900;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    border-top: 1px solid rgb(228, 228, 228);
+    padding-top: 8px;
+    bottom: 0px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 8px);
+} */
+
+.mainContainer{
+    width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    height: auto;
+    padding: 0;
+}
+
+.footerContentWrapper{
+    border-top: 1px solid rgb(230,230,230);
+    position: relative;
+    z-index: 99999;
+    margin-top: 0;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 76px);
+}
+
+.projectContentsSc{
+    display: flex;
+    width: 1040px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 38px;
+    margin: 0px auto;
+}
+
+.projectContentsMainColumn{
+    flex: 1 1 650px;
+    order: 1;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.projectContentsSubColumn{
+    display: block;
+    flex: 0 1 352px;
+    max-width: 352px;
+    padding-top: 25px;
+    order: 2;
+    width: 100%;
+    margin: 0px;
+}
+
+.mainColumnInner{
+    min-height: 500px;
+    width: 100%;
+}
+
+.reportButtonWrap{
+    padding-top: 30px;
+}
+
+.storyWrap{
+    padding: 0 15px;
+}
+
+.sectionTabsWrap{
+    box-sizing: border-box;
+    width: 100%;
+    background: none;
+    padding: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+
+.storyCard{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.storyCardInner:last-child{
+    padding: 32px 0;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.sectionTabs{
+    list-style: none;
+    overflow: auto hidden;
+    display: flex;
+    margin: 0px;
+    box-sizing: border-box;
+    width: 620px;
+    height: 64px;
+    padding: 16px 0px 8px;
+}
+
+.sectionTabs>li{
+    list-style: none;
+    margin-right: 12px;
+}
+
+.sectionTabs>li>.isActive {
+    border: none;
+    color: white;
+    background: rgb(61, 61, 61);
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0px 16px;
+    border-radius: 23px;
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 20px !important;
+}
+
+.sectionTabs>li>a{
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0px 16px;
+    border-radius: 23px;
+    font-weight: 400;
+    color: rgb(61, 61, 61);
+    border: 1px solid rgb(240, 240, 240);
+    font-size: 12px !important;
+    line-height: 20px !important;
+}
+
+.storyCardInner{
+    padding: 32px 0px 0px;
+    position: relative;
+}
+
+.storySection:first-child{
+    padding-top: 0;
+}
+
+.storySection {
+    border-bottom: 1px solid rgb(230,230,230);
+    padding: 32px 0;
+}
+
+.storySection:last-child{
+    border-bottom: none;
+}
+
+.storySectionTitle{
+    display: flex;
+    color: rgb(13, 13, 13);
+    font-weight: 700;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 18px !important;
+    line-height: 28px !important;
+}
+
+.storySectionTitle::before{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 14px;
+    background: rgb(61, 61, 61);
+    margin-right: 9px;
+}
+
+.storyContent, .storyContent label, .storyContent legend, .storyContent p, .storyContent dl, .storyContent ol, .storyContent ul {
+    font-size: 14px;
+    line-height: 24px;
+    color: #3d3d3d;
+    margin-bottom: 0;
+}
+
+.storyContent{
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.storyContent{
+    padding: 0;
+    margin: 0;
+}
+
+.storyContent p {
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+.storyContent h2 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #0d0d0d;
+    margin-top: 12px;
+}
+
+.storyContent img{
+    margin-top: 20px;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 620px;
+}
+
+.storyContent b, .storyContent caption, .storyContent dt, .storyContent strong, .storyContent th, .storyContent thead {
+    font-weight: 700;
+}
+
+.storyContent mark, .storyContent u {
+    text-decoration: none;
+    box-shadow: inset 0 -9px 0 rgba(255, 220, 219, 0.8);
+    padding: .15rem 0;
+}
+
+.storyContent dl + h1, .storyContent dl + h2, .storyContent dl + h3, .storyContent ol + h1, .storyContent ol + h2, .storyContent ol + h3, .storyContent p + h1, .storyContent p + h2, .storyContent p + h3, .storyContent table + h1, .storyContent table + h2, .storyContent table + h3, .storyContent ul + h1, .storyContent ul + h2, .storyContent ul + h3 {
+    margin-top: 39px;
+}
+
+.webInspectorHideShortcut{
+    visibility: hidden !important;
+}
+
+.storyContent, .storyContent ol, .storyContent ul {
+    font-size: 16px;
+    line-height: 28px;
+    color: #3d3d3d;
+}
+
+::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+
+.rewardCardWrapper{
+    border-bottom: none;
+    margin: 10px 0px 14px;
+}
+
+.stepRewardSelectItem{
+    border-radius: 4px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: height 0.2s, box-shadow 0.2s, border 0.2s ease-in-out;
+    overflow: auto;
+    box-shadow: none;
+    border: none !important;
+}
+
+.itemContentContainer{
+    padding: 20px;
+}
+
+.rewardContents{
+    margin: 0px 0px 8px;
+    color: rgb(61, 61, 61);
+}
+
+.rewardTitleWrapper{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 150%;
+}
+
+.rewardMinimumAmount{
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.storyContent b, .storyContent caption, .storyContent dt, .storyContent strong, .storyContent th, .storyContent thead {
+    font-weight: 700;
+}
+
+.rewardSelectItem{
+    border-bottom: none;
+    margin: 10px 0px 14px;
+}
+
+.rewardTitle{
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    padding-left: 34px;
+    overflow-wrap: break-word;
+}
+
+.itemRewardCardWrapper{
+    border-bottom: none;
+    margin: 10px 0px 14px;
+}
+
+.selectItemCard{
+    overflow: auto;
+    box-shadow: none;
+    border: none !important;
+    border-radius: 4px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.fundingUnderstand{
+    padding: 20px 0px 32px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.refundPolicyWrap{
+    padding: 20px 0px 32px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.sectionSubTitle{
+    color: rgb(61, 61, 61);
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 24px !important;
+}
+
+.fundingInfoWrap>dl {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px !important;
+    line-height: 22px !important;
+}
+
+.fundingInfoWrap>dl> dt{
+    color: rgb(61, 61, 61);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.fundingInfoWrap>dl> dt>img{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin: 0px 9px 2px 0px;
+}
+
+.fundingInfoWrap>dl> dd{
+    color: rgb(109, 109, 109);
+    margin: 0px;
+}
+
+.fundingUnderstandLink{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: rgb(248, 100, 83);
+    font-size: 14px !important;
+    line-height: 22px !important;
+}
+
+.fundingLinkWrapper{
+    font-size: 18px;
+    fill: rgb(248, 100, 83);
+    position: relative;
+    top: 3px;
+    margin-left: 5px;
+}
+
+.fundingIcon{
+    display: inline-flex;
+    align-self: center;
+}
+
+.fundingIcon>svg{
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+}
+
+.policyContents{
+    font-weight: 400;
+    font-size: 16px !important;
+    line-height: 28px !important;
+    margin-top: 20px;
+    color: rgb(109, 109, 109);
+}
+
+.buttonReport{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 0px;
+    background: transparent;
+}
+
+.buttonReport>span{
+    color: rgb(109, 109, 109);
+    text-decoration: underline;
+    margin: 0px 0px 0px 5px;
+}
+
+.reportIcon{
+    display: inline-flex;
+    align-self: center;
+}
+
+.reportIcon>svg{
+    overflow: hidden;
+    fill: rgb(109, 109, 109);
+    width: 1em;
+    height: 1em;
+}
+
+.subColumnInner{
+    min-height: 500px;
+    width: 100%;
+}
+
+.creatorCard{
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgb(228, 228, 228);
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+}
+
+.stickerWrapper{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: height 0.1s;
+    overflow-y: auto;
+    height: 953px;
+    top: 500px;
+}
+
+.stickerWrapper::-webkit-scrollbar{
+    opacity: 0;
+}
+
+.stickerGhost{
+    height: auto;
+}
+
+.creatorCardInner{
+    padding: 20px;
+}
+
+.creatorCardHeader{
+    margin-top: 0em;
+    margin-bottom: 16px;
+    font: 700 14px / 22px 'pretendard', sans-serif;
+    color: rgb(13, 13, 13);
+    display: block;
+}
+
+.creatorWrapper{
+    display: flex;
+    align-items: start;
+}
+
+.styledProfileImg{
+    flex-shrink: 0;
+    display: inline-block;
+    background-image: url(https://tumblbug-upi.imgix.net/22d76c5e-b039-4307-b641-50be60e14142.png?auto=format%2Ccompress&ch=Save-Data&facepad=2.0&fit=facearea&h=200&mask=ellipse&w=200&s=f0226da1e561a8bac0851a152180395b);
+    background-size: cover;
+    background-position: 50% 38%;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    box-shadow: rgb(208, 208, 208) 0px 0px 1px 0px inset, rgb(208, 208, 208) 0px 0px 1px 0px;
+    margin-right: 14px;
+    margin-top: 0px;
+}
+
+.creatorInfo{
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px;
+    justify-content: center;
+    gap: 4px;
+}
+
+.creatorName{
+    max-width: 230px;
+    color: rgb(61, 61, 61);
+    font: 700 14px / 22px 'pretendard', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.creatorBottomWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 4px;
+}
+
+.creatorBadgeWrap{
+    display: flex;
+    gap: 4px;
+}
+
+.creatorBadge{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: fit-content;
+    white-space: nowrap;
+    color: rgb(84, 84, 84);
+    background-color: rgb(255, 249, 221);
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 120%;
+    padding: 0px 6px;
+    border-radius: 2px;
+}
+
+.creatorStats{
+    font-weight: 500;
+    color: rgb(109, 109, 109);
+    font-size: 11px !important;
+    line-height: 18px !important;
+}
+
+.creatorBiography{
+    font-weight: 400;
+    color: rgb(109, 109, 109);
+    padding-top: 16px;
+    font-size: 13px !important;
+    line-height: 22px !important;
+    display: block;
+}
+
+.buttonsWrapper{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.buttonSectionContainer{
+    display: flex;
+    width: 50%;
+    cursor: pointer;
+}
+
+.buttonContainer{
+    width: 100%;
+    height: 36px;
+    padding: 14px 12px;
+    border-radius: 6px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    background-color: white;
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(84, 84, 84);
+}
+
+.chatIcon{
+    display: inline-flex;
+    align-self: center;
+    width: 16px;
+    height: 16px;
+}
+
+.chatIcon>svg{
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.followButtonContainer{
+    width: 100%;
+}
+
+.buttonContainer{
+    width: 100%;
+    height: 36px;
+    padding: 14px 12px;
+    border-radius: 6px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    background-color: white;
+    border: 1px solid rgb(235, 75, 56);
+    color: rgb(235, 75, 56);
+}
+
+.buttonContainer>svg{
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.reviewInfoWrap{
+    cursor: pointer;
+}
+
+.buttonContainer1{
+    width: 100%;
+    height: 36px;
+    padding: 14px 12px;
+    border-radius: 6px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    background-color: white;
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(84, 84, 84);
+}
+
+.swiperContainer{
+    overflow: hidden;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.reviewHorizontalLine{
+    margin: 20px 0px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.reviewInfoTitle{
+    font: 700 14px / 22px 'pretendard', sans-serif;
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(61, 61, 61);
+}
+
+.reviewKeywordWrap{
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    flex-flow: row;
+}
+
+.reviewCnt{
+    margin-left: 5px;
+    color: rgb(248, 100, 83);
+}
+
+.swiperWrapper{
+    display: flex;
+    transition-duration: 0ms;
+}
+
+.swiperController{
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiperSlide{
+    width: 310px;
+}
+
+.reviewItemWrapper{
+    cursor: pointer;
+    width: inherit;
+    margin-bottom: 10px;
+}
+
+.reviewItemContainer{
+    height: 90px;
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 8px;
+    width: inherit;
+}
+
+.reviewImgContainer{
+    position: relative;
+}
+
+.reviewItemImg{
+    width: 66px;
+    height: 66px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.reviewImgCount{
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    padding: 0px 6px;
+    border-radius: 52px;
+    font: 700 10px / 18px 'Pretendard', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+}
+
+.itemPickBadgeWrapper{
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.reviewItemContents{
+    margin-bottom: 0em;
+    font: 400 13px / 22px 'Pretendard', sans-serif;
+    color: rgb(61, 61, 61);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 210px;
+}
+
+.reviewItemContentsB{
+    margin-bottom: 0em;
+    font: 400 13px / 22px 'Pretendard', sans-serif;
+    color: rgb(61, 61, 61);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 210px;
+    height: 44px;
+}
+
+.reviewPickBadge{
+    color: rgb(235, 75, 56);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 120%;
+    width: fit-content;
+    padding: 2px 4px;
+    border: 0.5px solid rgb(255, 202, 178);
+    background-color: rgb(255, 247, 240);
+    border-radius: 2px;
+}
+
+.reviewKeywordIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+.reviewInfoWrapKeyword{
+    display: flex;
+    align-items: center;
+    font: 400 13px / 22px 'Pretendard', sans-serif;
+    flex: 0 1 50%;
+}
+
+.reviewInfoWrapRate{
+    font-weight: 700;
+    color: rgb(61, 61, 61);
+}
+
+.reviewInfoWrapKeyword2{
+    color: rgb(109, 109, 109);
+    margin-right: 8px;
+}
+
+.swiperButtonLeft{
+    cursor: pointer;
+    display: flex;
+    margin: 0px 10px;
+}
+
+.swiperButtonLeft>svg{
+    overflow: hidden;
+    fill: rgb(109, 109, 109);
+}
+
+.swiperButtonRight{
+    cursor: pointer;
+    display: flex;
+    margin: 0px 10px;
+}
+
+.swiperPagination{
+    font: 500 14px / 22px 'Pretendard', sans-serif;
+    color: rgb(158, 158, 158);
+}
+
+.paginationCurrent{
+    font: 700 14px / 22px 'Pretendard', sans-serif;
+    color: rgb(13, 13, 13);
+}
+
+.rewardsSc{
+    width: 100%;
+    height: auto;
+    padding: 24px 0px 0px;
+    color: #3d3d3d;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    background: transparent !important;
+}
+
+.rewardsLabel{
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.rewardCardWrapper{
+    border-bottom: none;
+    margin: 10px 0px 14px;
+}
+
+.rewardCard{
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(239, 239, 239);
+    transition: height 0.2s, box-shadow 0.2s, border 0.2s ease-in-out;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px, rgba(0, 0, 0, 0.04) 0px 2px 4px;
+}
+
+.stepperWrapper{
+    position: relative;
+    transition: height 0.1s ease-out;
+    overflow: hidden;
+}
+
+.stepper{
+    transition: 0.4s ease-out;
+    opacity: 1;
+    height: auto;
+    left: 0%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.rewardCardInner{
+    padding: 20px;
+}
+
+.rewardContents{
+    color: rgb(158, 158, 158);
+    margin: 0px 0px 8px;
+}
+
+.rewardTitleWrapper{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 150%;
+}
+
+.rewardTitle{
+    padding-left: 0px;
+    overflow-wrap: break-word;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+}
+
+.rewardMinimum{
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.025em;
+    margin: 0px 0px 6px;
+    font-weight: bold;
+}
+
+.rewardHeaderContainer{
+    padding: 0px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    color: rgb(158, 158, 158);
+}
+
+.headerPledgeAmount{
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+}
+
+.rewardIcon{
+    display: inline-flex;
+    font-size: 11px;
+    margin: 0 6px 0 0;
+}
+
+.rewardIcon>svg{
+    fill: rgb(158, 158, 158);
+    position: relative;
+    top: 2px;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+}
+
+.rewardItems{
+    padding: 0px;
+    margin: 0px;
+    color: rgb(158, 158, 158);
+}
+
+.rewardItemList{
+    color: rgb(158, 158, 158);
+    padding: 0px 0px 0px 10px;
+    position: relative;
+    font: 400 11px / 20px 'Pretendard', sans-serif;
+    list-style: none;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.rewardItemList::before{
+    content: "·";
+    position: absolute;
+    font-weight: bold;
+    left: 0px;
+    top: -1px;
+}
+
+.rewardInfoWrapper{
+    gap: 4px;
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+}
+
+.recommendedLabel{
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    padding: 3px 8px;
+    height: 26px;
+    background-color: rgb(158, 158, 158);
+}
+
+.rewardQuantitiLimit{
+    display: flex;
+}
+
+.rewardSoldoutLabel{
+    display: flex;
+    align-items: center;
+    color: rgb(109, 109, 109);
+    background-color: rgb(240, 240, 240);
+    border-radius: 2px;
+    border: 1px solid rgb(228, 228, 228);
+    padding: 3px 8px;
+    height: 26px;
+}
+
+.adsProjectsWrapper{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    background: #fff;
+    color: #3d3d3d;
+    padding-top: 32px;
+}
+
+.adsContainerComponent{
+    padding: 0px;
+    max-width: 1032px;
+    margin: 0px auto;
+}
+
+.adsTitle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.025em;
+    margin: 0px 0px 20px;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    position: relative;
+}
+
+.adsListWrapper{
+    width: 100%;
+}
+
+.adsProjectsBadge{
+    display: flex;
+    width: 25px;
+    height: 19px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    color: rgb(228, 228, 228);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.collectionBannerContainer{
+    margin: 0px auto;
+    max-width: 1160px;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    z-index: 2;
+}
+
+.projectSliderWrapper{
+    position: relative;
+}
+
+.adsSwiperContainer{
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    z-index: 1;
+}
+
+.adsSwiperWrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    margin-left: auto;
+}
+
+.adsSwiperSlide{
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    box-sizing: border-box;
+    width: 194.4px;
+    margin-right: 15px;
+}
+
+.projectCardWrapper{
+    display: flex;
+    flex-direction: column;
+    min-width: 136px;
+    width: 100%;
+    transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform-origin: center center;
+}
+
+.cardLinkWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.cardImageWrapper{
+    width: 100%;
+    height: 100%;
+    flex: 0 0 auto;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    border-radius: 8px;
+    transform-origin: center center;
+}
+
+.basicCardImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s ease-in-out;
+    vertical-align: bottom;
+}
+
+.cardMainContent{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+.adsCreatorNameWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+.adsFundingStatus{
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 120%;
+    color: rgb(235, 75, 56);
+}
+
+.adsBadgeWrapper{
+    width: 100%;
+    height: 18px;
+    margin-bottom: 12px;
+}
+
+.projectCreatorName{
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(84, 84, 84);
+}
+
+.projectCreatorName>div{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.cardContent{
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-top: 8px;
+    margin-left: 0px;
+    padding: 0px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectTitle{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(28, 28, 28);
+    margin-bottom: 6px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projectLikeButton{
+    width: 40px;
+    height: 40px;
+    bottom: 2px;
+    right: 2px;
+    position: absolute;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adsBadgesWrapper{
+    display: flex;
+    gap: 4px;
+}
+
+.leftDaysBadge{
+    color: rgb(235, 75, 56);
+    background-color: rgb(255, 242, 243);
+    height: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 0px 4px;
+    border-radius: 2px;
+}
+
+.currentMoneybadge{
+    color: rgb(84, 84, 84);
+    background-color: rgb(248, 248, 248);
+    height: 18px;
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 0px 4px;
+    border-radius: 2px;
+}
+
+.creatorBadge{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: fit-content;
+    white-space: nowrap;
+    color: rgb(84, 84, 84);
+    background-color: rgb(255, 249, 221);
+    height: 18px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 120%;
+    padding: 0px 4px;
+    border-radius: 2px;
+}
+
+.basicCardImage:hover{
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+.navLeft>a:hover{
+    color: black;
+}

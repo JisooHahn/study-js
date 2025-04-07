@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클래스 이름 선택</title>
+        <style>
+            body {
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>클래스 이름 선택</h1>
+        <ul>
+            <li class="odd item">첫 번째 아이템이에요!</li>
+            <li class="even item">두 번째 아이템이에요!</li>
+            <li class="odd item">세 번째 아이템이에요!</li>
+            <li class="even item">네 번째 아이템이에요!</li>
+            <li class="odd item">다섯 번째 아이템이에요!</li>
+        </ul>
+    </body>
+    <script>
+        // odd객체를 모아놓은 리스트
+        // dom을 쓰면 const로 선언하자.
+        // const oddList = document.getElementsByClassName("odd");
+
+        // oddList.length는 oddList 안에 포함된 요소의 수를 반환(3개)
+        // i가 0, 1, 2로 변하며 각 oddList[i]에 접근할 수 있다.
+        // for (let i = 0; i < oddList.length; i++) {
+        //     console.log(oddList[i]);
+        // }
+
+        // for...of 루프
+        // odd는 oddList 안 요소를 순차적으로 대체
+        // 첫 번째 반복에서는 odd에 첫 번째 <div class="odd">Item 1</div> 요소가 할당
+        // for (let odd of oddList) {
+        //     console.log(odd);
+        // }
+
+        // HTMLCollection은 원래 forEach를 사용할 수 없기 땜에, Array에서 메서드를 연결한다
+        // 이걸 사용하면 Array처럼 forEach, filter 등의 기능을 사용할 수 있다.
+        // HTMLCollecion.prototype.forEach = Array.prototype.forEach;
+        // class 이름으로 그에 맞는 요소 갖고오기
+        // const oddList = document.getElementsByClassName("odd");
+        // const evenList = document.getElementsByClassName("even");
+
+        // // for 루프를 직관적으로 대체한다
+        // oddList.forEach((odd) => {
+        //     odd.style.color = "red";
+        // });
+
+        // evenList.forEach((even) => {
+        //     even.style.color = "green";
+        // });
+
+        // 홀수와 짝수 번째 각각 빨간색과 녹색으로 변경한다.
+        // 단, 모든 li태그를 가져와서 처리한다.
+
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+        // 문서에서 가져올거니까 document를 먼저 쓰자
+        const item = document.getElementsByClassName("item");
+        items.forEach((li) => {
+            // 각 <li> 태그의 클래스 리스트 중 첫 번째 클래스(classList[0])를 확인
+            // 반복문이라 [0]만 써도 처음부터 끝까지 반복한다
+            // li.style.color = li.classList[0] === "odd" ? "red" : "green";
+
+            // classList는 해당 요소(여기선 li)의 클래스 목록을 나타냄
+            // add(), remove(), contains() 등이 있음
+            // li의 class에 odd가 포함되어있는가? 맞으면 true 아니면 false
+            li.style.color = li.classList.contains("odd") ? "red" : "green";
+        });
+    </script>
+</html>

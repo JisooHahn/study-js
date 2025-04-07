@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 속성 선택</title>
+</head>
+<body>
+    <h1>아이디 속성 선택</h1>
+        <div id="first">
+            <strong>첫 번째 DIV 입니다.</strong>
+        </div>
+        <div id="second">두 번째 DIV 입니다.</div>
+        <textarea id="third">textarea 입니다.</textarea>
+        <input type="text" id="fourth" value="input 입니다." />
+</body>
+<script>
+    // id는 하나밖에 없기 때문에 getElements가 아니다
+    const first = document.getElementById("first");
+    const second = document.getElementById("second");
+    const third = document.getElementById("third");
+    const fourth = document.getElementById("fourth");
+
+    // console.log(first.innerText); // 글자만 출력
+    // console.log(first.innerHTML); //<태그> 글자 </태그>로 출력
+
+    first.innerText = "<strong>수정된 DIV 태그입니다.</strong>";
+    first.innerHTML = "<strong>수정된 DIV 태그입니다.</strong>";
+
+    // 원래 작성되었던 문자열을 가져올 때 innerHTML 사용
+    console.log(first.innerHTML);
+    // 사용자가 작성한 문자열은 value로 가져온다.
+    console.log(third.value);
+    // input 태그는 value로만 가져올 수 있다.
+    console.log(fourth.value);
+
+</script>
+</html>

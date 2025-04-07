@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>객체를 동적으로 생성, 삽입, 삭제</title>
+    </head>
+    <body>
+        <p>DOM 트리에 동적으로 객체를 삽입할 수 있다.</p>
+        <p>
+            createElement(), append(), appendChild(), prepend() insertBefore(),
+            before(), after(), removeChild()
+        </p>
+        <p>위 8개의 메소드를 이용해서 새로운 객체를 생성, 삽입, 삭제한다.</p>
+        <div id="new-object">
+            <p><strong>생성될 객체들</strong></p>
+            <p>마지막 부분</p>
+        </div>
+    </body>
+    <script>
+        // id가 new-object인 div
+        const wrap = document.getElementById("new-object");
+        // div의 첫째 자식 p 의 첫째 자식 strong
+        const strong = wrap.firstElementChild.firstElementChild;
+        // createElement는 새로운 HTML 요소를 생성한다.
+        const p = document.createElement("p");
+        // wrap의 첫번째 자식(strong을 감싸는 p)
+        const firstP = wrap.firstElementChild;
+        // wrap의 마지막 자식 "마지막 부분"
+        const lastP = wrap.lastElementChild;
+        // h1을 생성
+        const h = document.createElement("h1");
+
+        // p 안에 "새로 생성된 객체"라는 문자열 생성
+        p.innerText = "새로 생성된 객체";
+        // p의 색을 빨강으로 변경
+        p.style.color = "red";
+        // h 안에 "반갑습니다" 라는 문자열 생성
+        h.innerText = "반갑습니다!";
+        // 이렇게 만든 요소들을 html에 적용시키려면 append를 써야한다.
+        wrap.append(p); // p를 wrap 안에 생성
+        wrap.appendChild(h);
+
+        // 자식 요소로 맨 아래에 추가
+        // append()는 객체뿐만 아니라 문자열도 추가된다.
+        // wrap.append(p);
+        // wrap.appendChild(p);
+
+        // 자식 요소로 맨 위에 추가
+        // wrap.prepend(p);
+
+        // 자식 요소로 원하는 위치에 추가
+        // 두 번째로 전달한 자식 요소 앞에 추가된다.
+        // wrap.insertBefore(p, lastP);
+
+        // 자식이 아닌 형재자매로 추가된다.
+        // wrap.before(h);
+        // wrap.after(h);
+
+        // 자식 태그 삭제
+        // wrap.removeChild(lastP);
+
+        // 자기 자신 삭제
+        // lastP.remove();
+    </script>
+</html>

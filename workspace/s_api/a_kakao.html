@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>카카오맵</title>
+        <style>
+            #map {
+                height: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6dd246511f88ed2b14cf92253448c22a&libraries=services"></script>
+    <script>
+        let geocoder = new kakao.maps.services.Geocoder();
+        geocoder.addressSearch(
+            "경기도 성남시 분당구 양현로 254",
+            (result, status) => {
+                if (status === kakao.maps.services.Status.OK) {
+                    let coords = new kakao.maps.LatLng(
+                        result[0].y,
+                        result[0].x
+                    );
+
+                    let mapContainer = document.getElementById("map"), // 지도를 표시할 div
+                        mapOption = {
+                            center: coords,
+                            level: 3, // 지도의 확대 레벨
+                        };
+
+                    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                    let map = new kakao.maps.Map(mapContainer, mapOption);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    let marker = new kakao.maps.Marker({
+                        map: map,
+                        position: coords,
+                    });
+
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                }
+            }
+        );
+    </script>
+</html>

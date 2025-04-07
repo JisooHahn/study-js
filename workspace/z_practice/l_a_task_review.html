@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트 실습</title>
+    <style>
+        p {
+            color: red;
+        }
+
+        /* 더 구체적으로 명시한 요소의 스타일이 적용 우선도가 더 높다 */
+        p.green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="form">
+        <div>
+            <input type="text" name="member-id" placeholder="아이디" />
+        </div>
+        <p id="id-message" class="green"></p>
+        <div>
+            <input
+                 type="password"
+                 name="member-password"
+                placeholder="비밀번호"
+            />
+         </div>
+        <p id="password-message" class="green"></p>
+        <button type="button">검사</button>
+    </form>    
+</body>
+<script>
+    // name이 member-id인 input 
+    const idInput = document.querySelector("input[name=member-id]");
+    // id가 id-message인 p
+    const idMessage = document.getElementById("id-message");
+
+    // name이 member-password인 input
+    const passwordInput = document.querySelector("input[name=member-password]");
+    // id가 password-message인 p
+    const passwordMessage = document.getElementById("password-message");
+    // passwordMessage 다음의 형제 button
+    const button = passwordMessage.nextElementSibling;
+
+    button.addeventListner("click" ,() => {
+    // 아이디를 검사
+    // 1. 아이디가 입력되지 않았을 때 적절한 메세지를 id-message에 빨간색으로 작성
+    // 2. 아이디가 입력되었을 때 적절한 메세지를 id-message에 녹색으로 작성
+    
+        // idInput의 값이 true일 때
+    if(idInput.value) {
+            idMessage.innerText = "멋진 아이디네요!";
+            // idMessage의 class목록에 "green"을 추가한다.
+            // CSS에서 class .green의 색상을 초록으로 바꿨으므로 초록색이 적용된다 
+            idMessage.classList.add("green");
+    }
+    else {
+            idMessage.innerText = "아이디를 입력해주세요."
+            // class .green을 제거하면 p의 색 빨강이 된다.
+            idMessage.classList.remove("green");
+    }
+    // 비밀번호를 검사
+    // 1. 비밀번호가 입력되지 않았을 때 적절한 메세지를 password-message에 빨간색으로 작성
+    // 2. 비밀번호가 입력되었을 때 적절한 메세지를 password-message에 녹색으로 작성
+    if (passwordInput.value) {
+        passwordMessage.innerText = "적합한 비밀번호입니다.";
+        passwordMessage.classList.add("green");
+    } else {
+                passwordMessage.innerText = "비밀번호를 입력해주세요.";
+                passwordMessage.classList.remove("green");
+    }
+});
+</script>
+</html>
