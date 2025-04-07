@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 개인실습3</title>
+        <style>
+            table {
+                margin: 10% auto;
+                border-collapse: collapse;
+                text-align: center;
+                width: 700px;
+                table-layout: fixed;
+                outline: none;
+                word-wrap: break-word;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            .outlined {
+                outline: 3px solid black;
+            }
+
+            tr.on {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 사용자 이름(name)과 이메일(email)을 출력.
+        email이 biz를 포함하면 해당 글씨를 빨간색으로 강조. -->
+        <button id="get-table">댓글 불러오기</button>
+        <table id="comment-table"></table>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

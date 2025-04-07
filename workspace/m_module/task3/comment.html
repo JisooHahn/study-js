@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 개인실습1</title>
+        <style>
+            table {
+                margin: 10% auto;
+                border-collapse: collapse;
+                text-align: center;
+                width: 700px;
+                table-layout: fixed;
+                outline: none;
+                word-wrap: break-word;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            tr td:first-child {
+                width: 40%;
+            }
+
+            td {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            td.red {
+                color: red;
+                font-weight: bold;
+            }
+
+            .outlined {
+                border: 3px solid black;
+            }
+
+            button {
+                position: absolute;
+                margin: 10% 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 댓글 목록을 10개 불러온다. -->
+        <!-- table 태그를 사용한다. 댓글 내용은 이름, 이메일의 밑의 줄에다가 쓴다.-->
+        <!-- postId가 2인 email만 글씨를 빨간색으로 바꾸고 bold로 강조한다. -->
+        <!-- 이름, 이메일이랑 댓글 내용 세 개의 정보를 출력한다. -->
+        <!-- 이 때 게시글 제목 또는 내용이 넘칠 경우 ... 스타일로 처리해준다. -->
+        <button id="get-table">댓글 불러오기</button>
+        <table id="comment-table"></table>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

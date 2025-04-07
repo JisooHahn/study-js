@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 실습1</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #table-wrap {
+                margin: 0 auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            table {
+                border: 2px solid hotpink;
+                border-collapse: collapse;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            th,
+            td {
+                width: 30%;
+                height: 40px;
+                text-align: center;
+                border: 1px solid black;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            th {
+                height: 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 700px;
+            }
+
+            th:first-child {
+                width: 20%;
+            }
+
+            td {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 700px;
+            }
+
+            button {
+                height: 30px;
+                position: absolute;
+                margin-top: 25%;
+                border: none;
+                border-radius: 3px;
+                background-color: aquamarine;
+                transform: translateX(-850px);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 테이블 태그를 사용해서 게시글 목록 화면을 구현한다. -->
+        <!-- 게시글 전체 목록 중, 10개만 가져온다. -->
+        <!-- 게시글 정보는 userId, title, body를 사용한다. -->
+        <!-- 이 때 게시글 제목 또는 내용이 넘칠 경우 ... 스타일로 처리해준다. -->
+        <button id="get-table">게시글 가져오기</button>
+        <div id="table-wrap">
+            <table id="table"></table>
+        </div>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

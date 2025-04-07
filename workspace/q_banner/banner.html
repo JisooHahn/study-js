@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>슬라이드 배너</title>
+        <link rel="stylesheet" href="banner.css" />
+    </head>
+    <body>
+        <section class="container">
+            <div class="arrow left">&lt;</div>
+            <div class="banner">
+                <div><img src="images/001.png" /></div>
+                <div><img src="images/002.png" /></div>
+                <div><img src="images/003.png" /></div>
+                <div><img src="images/004.png" /></div>
+                <div><img src="images/005.png" /></div>
+                <div><img src="images/006.png" /></div>
+            </div>
+            <div class="arrow right">&gt;</div>
+            <div class="buttons">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </section>
+    </body>
+    <script>
+        //V1.0
+        // const banner = document.querySelector("div.banner");
+        // let count = 0;
+        // setInterval(() => {
+        //     count++;
+        //     count == 6 && (count = 0);
+        //     banner.style.transform = `translate(-${1500 * count}px)`;
+        //     banner.style.transition = `transform 0.5s`;
+        // }, 2000);
+
+        //V2.0
+        // const firstBanner = document.createElement("div");
+        // const banner = document.querySelector("div.banner");
+        // let count = 0;
+
+        // firstBanner.innerHTML = `<img src="images/001.png" />`;
+        // banner.appendChild(firstBanner);
+
+        // const autoSlide = () => {
+        //     count++;
+        //     banner.style.transform = `translate(-${1500 * count}px)`;
+        //     banner.style.transition = `transform 0.5s`;
+
+        //     if (count === 6) {
+        //         setTimeout(() => {
+        //             banner.style.transform = `translate(0px)`;
+        //             banner.style.transition = `transform 0s`;
+        //         }, 500);
+        //         count = 0;
+        //     }
+        // };
+
+        // setInterval(autoSlide, 2000);
+
+        //V2.1
+        // const firstBanner = document.createElement("div");
+        // const lastBanner = document.createElement("div");
+        // const banner = document.querySelector("div.banner");
+        // const arrows = document.querySelectorAll("div.arrow");
+        // let count = 1;
+
+        // firstBanner.innerHTML = `<img src="images/001.png" />`;
+        // lastBanner.innerHTML = `<img src="images/006.png" />`;
+
+        // banner.appendChild(firstBanner);
+        // banner.prepend(lastBanner);
+
+        // banner.style.transform = `translate(-1500px)`;
+
+        // const autoSlide = () => {
+        //     count++;
+        //     banner.style.transform = `translate(-${1500 * count}px)`;
+        //     banner.style.transition = `transform 0.5s`;
+
+        //     if (count === 7) {
+        //         setTimeout(() => {
+        //             banner.style.transform = `translate(-1500px)`;
+        //             banner.style.transition = `transform 0s`;
+        //         }, 500);
+        //         count = 1;
+        //     }
+        // };
+
+        // let autoSlideInterval = setInterval(autoSlide, 1000);
+        // let arrowCheck = true;
+
+        // arrows.forEach((arrow) => {
+        //     arrow.addEventListener("click", (e) => {
+        //         if (!arrowCheck) {
+        //             return;
+        //         }
+        //         arrowCheck = false;
+        //         clearInterval(autoSlideInterval);
+
+        //         let arrowType = e.target.classList[1];
+
+        //         if (arrowType === "left") {
+        //             count--;
+        //             banner.style.transform = `translate(-${1500 * count}px)`;
+        //             banner.style.transition = `transform 0.5s`;
+
+        //             if (count === 0) {
+        //                 setTimeout(() => {
+        //                     banner.style.transform = `translate(-9000px)`;
+        //                     banner.style.transition = `transform 0s`;
+        //                 }, 500);
+        //                 count = 6;
+        //             }
+        //         } else {
+        //             count++;
+        //             banner.style.transform = `translate(-${1500 * count}px)`;
+        //             banner.style.transition = `transform 0.5s`;
+
+        //             if (count === 7) {
+        //                 setTimeout(() => {
+        //                     banner.style.transform = `translate(-1500px)`;
+        //                     banner.style.transition = `transform 0s`;
+        //                 }, 500);
+        //                 count = 1;
+        //             }
+        //         }
+        //
+        //         autoSlideInterval = setInterval(autoSlide, 1000);
+        //         setTimeout(() => {
+        //             arrowCheck = true;
+        //         }, 500);
+        //     });
+        // });
+
+        //V2.2
+        const firstBanner = document.createElement("div");
+        const lastBanner = document.createElement("div");
+        const banner = document.querySelector("div.banner");
+        const arrows = document.querySelectorAll("div.arrow");
+        const buttons = document.querySelectorAll("div.buttons button");
+        let count = 1;
+        let tempButton = buttons[0];
+
+        tempButton.style.background = "black";
+
+        firstBanner.innerHTML = `<img src="images/001.png" />`;
+        lastBanner.innerHTML = `<img src="images/006.png" />`;
+
+        banner.appendChild(firstBanner);
+        banner.prepend(lastBanner);
+
+        banner.style.transform = `translate(-1500px)`;
+
+        const autoSlide = () => {
+            count++;
+            banner.style.transform = `translate(-${1500 * count}px)`;
+            banner.style.transition = `transform 0.5s`;
+
+            if (count === 7) {
+                setTimeout(() => {
+                    banner.style.transform = `translate(-1500px)`;
+                    banner.style.transition = `transform 0s`;
+                }, 500);
+                count = 1;
+            }
+            tempButton.style.background = "white";
+            buttons[count - 1].style.background = "black";
+            tempButton = buttons[count - 1];
+        };
+
+        let autoSlideInterval = setInterval(autoSlide, 1000);
+        let arrowCheck = true;
+
+        arrows.forEach((arrow) => {
+            arrow.addEventListener("click", (e) => {
+                if (!arrowCheck) {
+                    return;
+                }
+                arrowCheck = false;
+                clearInterval(autoSlideInterval);
+
+                let arrowType = e.target.classList[1];
+
+                if (arrowType === "left") {
+                    count--;
+                    banner.style.transform = `translate(-${1500 * count}px)`;
+                    banner.style.transition = `transform 0.5s`;
+
+                    if (count === 0) {
+                        setTimeout(() => {
+                            banner.style.transform = `translate(-9000px)`;
+                            banner.style.transition = `transform 0s`;
+                        }, 500);
+                        count = 6;
+                    }
+                } else {
+                    count++;
+                    banner.style.transform = `translate(-${1500 * count}px)`;
+                    banner.style.transition = `transform 0.5s`;
+
+                    if (count === 7) {
+                        setTimeout(() => {
+                            banner.style.transform = `translate(-1500px)`;
+                            banner.style.transition = `transform 0s`;
+                        }, 500);
+                        count = 1;
+                    }
+                }
+
+                autoSlideInterval = setInterval(autoSlide, 1000);
+                setTimeout(() => {
+                    arrowCheck = true;
+                }, 500);
+            });
+        });
+
+        let buttonCheck = true;
+
+        buttons.forEach((button, i) => {
+            button.addEventListener("click", () => {
+                if (!buttonCheck) {
+                    return;
+                }
+
+                buttonCheck = false;
+
+                clearInterval(autoSlideInterval);
+
+                tempButton.style.background = "white";
+                count = i + 1;
+
+                banner.style.transform = `translate(-${1500 * count}px)`;
+                banner.style.transition = `transform 0.5s`;
+
+                buttons[i].style.background = "black";
+                tempButton = buttons[i];
+
+                autoSlideInterval = setInterval(autoSlide, 1000);
+
+                setTimeout(() => {
+                    buttonCheck = true;
+                }, 500);
+            });
+        });
+    </script>
+</html>

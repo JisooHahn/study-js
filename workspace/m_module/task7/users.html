@@ -1,0 +1,42 @@
+<!-- 사용자 정보를 10개 불러온다.
+<table> 태그를 사용한다.
+name이 "Leanne"인 사람의 이메일을 빨간색으로 바꾸고 굵은 글씨로 강조한다.
+address 객체의 city와 zipcode를 출력한다.
+버튼으로 테이블에 필터를 적용하여, company가 "Romaguera-Crona"인 사람만 보이게 한다.
+버튼을 클릭하여 필터를 적용하거나 해제할 수 있게 한다. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 개인실습5</title>
+        <style>
+            table {
+                margin: 10% auto;
+                border-collapse: collapse;
+                text-align: center;
+                width: 700px;
+                table-layout: fixed;
+                outline: none;
+                word-wrap: break-word;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            tr.on {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="get-table">중요인물만 띄우기</button>
+        <table id="user-table"></table>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

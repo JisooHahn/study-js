@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이벤트 위임</title>
+    </head>
+    <body>
+        <div id="container" style="height: 400px"></div>
+    </body>
+    <script>
+        const container = document.getElementById("container");
+        let children = null;
+
+        container.innerHTML = `<div class="child child1">이벤트 위임1</div>`;
+        container.innerHTML += `<div class="child child2">이벤트 위임2</div>`;
+
+        children = document.querySelectorAll("div.child");
+
+        // 원래 작성되어있던 태그에 이벤트를 주고
+        // 해당 자식 태그인지를 구분하여 로직을 작성한다.
+        // 부모에 이벤트가 발생되면 자식도 동일한 이벤트가 위임된다.
+        container.addEventListener("click", (e) => {
+            if (e.target.classList[0] === "child") {
+                alert(`${e.target.classList[1]} 눌림!`);
+            }
+        });
+
+        // JS에서 새롭게 추가된 태그들보다 이벤트가 먼저 실행된다.
+        // children.forEach((child) => {
+        //     child.addEventListener("click", (e) => {
+        //         alert(`${child.classList[1]} 눌림!`);
+        //     });
+        // });
+    </script>
+</html>

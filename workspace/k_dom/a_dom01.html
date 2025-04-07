@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클래스 이름 선택</title>
+        <style>
+            body {
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>클래스 이름 선택</h1>
+        <ul>
+            <li class="odd item">첫 번째 아이템이에요!</li>
+            <li class="even item">두 번째 아이템이에요!</li>
+            <li class="odd item">세 번째 아이템이에요!</li>
+            <li class="even item">네 번째 아이템이에요!</li>
+            <li class="odd item">다섯 번째 아이템이에요!</li>
+        </ul>
+    </body>
+    <script>
+        // odd객체를 모아놓은 리스트
+        // dom을 쓰면 const로 선언하자.
+        // const oddList = document.getElementsByClassName("odd");
+
+        // for (let i = 0; i < oddList.length; i++) {
+        //     console.log(oddList[i]);
+        // }
+
+        // for (let odd of oddList) {
+        //     console.log(odd);
+        // }
+
+        // HTMLCollection.prototype.forEach = Array.prototype.forEach;
+        // const oddList = document.getElementsByClassName("odd");
+        // const evenList = document.getElementsByClassName("even");
+
+        // oddList.forEach((odd) => {
+        //     odd.style.color = "red";
+        // });
+
+        // evenList.forEach((even) => {
+        //     even.style.color = "green";
+        // });
+
+        // // 짝수 번째는 녹색으로 변경
+
+        // 홀수와 짝수 번째 각각 빨간색과 녹색으로 변경한다.
+        // 단, 모든 li태그를 가져와서 처리한다.
+
+        // HTMLCollection이 forEach를 지원하지 않기 때문에 Array랑 프로토타입 체인에 추가한다.
+        // 이로서 forEach 사용 가능
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+        // 클래스명이 item인 모든 요소를 선택하여 HTMLCollection으로 반환
+        const liTags = document.getElementsByClassName("item");
+        // forEach를 사용해 HTMLCollection의 모든 요소를 순회하며 스타일 작업 수행
+        liTags.forEach((li) => {
+            // console.log(li.className.includes("odd"));
+            // 각 <li> 태그의 클래스 리스트 중 첫 번째 클래스(classList[0])를 확인
+            // li.style.color = li.classList[0] === "odd" ? "red" : "green";
+            li.style.color = li.classList.contains("odd") ? "red" : "green";
+        });
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 실습2</title>
+        <style>
+            table {
+                width: 80%;
+                margin: 0 auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            tr {
+                color: black;
+            }
+            .underline {
+                text-decoration: underline;
+            }
+            .bodycol {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- comment 목록을 10개 불러온뒤 id, name, email, body를 가져와 
+         name에는 밑줄을 body는 파란글씨로 출력한다. -->
+        <button id="get-comments">할 일 목록 불러오기</button>
+        <table class="comments"></table>
+    </body>
+    <script src="homeworke2_service.js"></script>
+    <script src="homeworke2_layout.js"></script>
+    <script src="homeworke2_event.js"></script>
+</html>

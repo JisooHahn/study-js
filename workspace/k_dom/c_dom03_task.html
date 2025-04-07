@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM 실습</title>
+    </head>
+    <body>
+        <strong>STRONG 태그입니다.</strong>
+        <div id="strong-wrap">
+            <strong>STRONG 태그입니다.</strong>
+        </div>
+    </body>
+    <script>
+        // div안에 있는 strong태그에만 글자 크기를 기본 크기의 1.5배로 설정한다.
+        // div안에 있지 않은 strong 태그에만 글자색을 핫핑크로 변경한다.
+        // const strong1 = document.querySelectorAll("body strong:first-child");
+        // const strong1 = document.querySelector("body>strong");
+        const strongWrap = document.querySelector("#strong-wrap");
+        const strong1 = strongWrap.previousElementSibling;
+        const strong2 = strongWrap.firstElementChild;
+
+        strong1.style.fontSize = "1.5rem";
+        strong2.style.color = "hotpink";
+    </script>
+</html>

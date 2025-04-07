@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>체크 박스 실습</title>
+    </head>
+    <body>
+        <label> <input type="checkbox" value="선택1" /> 선택1 </label>
+        <label> <input type="checkbox" value="선택2" /> 선택2 </label>
+        <label> <input type="checkbox" value="선택3" /> 선택3 </label>
+        <p id="result"></p>
+    </body>
+    <script>
+        // 체크박스에 선택된 문구가 p태그에 순서대로 출력된다.
+        // 결과는 p태그에 작성하고, 해제될 때에는 해당 문구를 삭제한다.
+        NodeList.prototype.filter = Array.prototype.filter;
+
+        const checkboxes = document.querySelectorAll("input[type=checkbox]");
+        const result = document.getElementById("result");
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", (e) => {
+                let text = ``;
+
+                if (e.target.checked) {
+                    text = `<span>${e.target.value}</span>`;
+                    result.innerHTML += text;
+                } else {
+                    const spans = document.querySelectorAll("#result span");
+                    // 해제된 것은 남길필요 없으니, 해제 안된 것만 들고와서 다시 붙이기
+                    spans
+                        .filter((span) => span.innerText !== e.target.value)
+                        .forEach((span) => {
+                            text += `<span>${span.innerText}</span>`;
+                        });
+                    result.innerHTML = text;
+                }
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>체크 박스</title>
+    </head>
+    <body>
+        <label><input type="checkbox" value="선택" />선택</label>
+        <p id="text"></p>
+    </body>
+    <script>
+        const checkbox = document.querySelector("input[type=checkbox]");
+        const text = document.getElementById("text");
+        // 처음부터 체크상태를 유지하고자 하면 아래와 같이 true를 준다.
+        // checkbox.checked = true;
+
+        checkbox.addEventListener("change", (e) => {
+            // console.log(e.target.checked);
+            if (e.target.checked) {
+                text.innerText = e.target.value;
+            } else {
+                text.innerText = "";
+            }
+        });
+    </script>
+</html>

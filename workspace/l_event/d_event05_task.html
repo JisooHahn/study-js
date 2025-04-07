@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <title>약관 동의</title>
+            </head>
+            <body>
+                <form action="" name="my-form">
+                    <div>
+                        <label>
+                            전체 동의
+                            <input type="checkbox" name="all" class="all" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            서비스 이용약관 동의
+                            <input type="checkbox" name="term1" class="term" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            광고 수신 동의
+                            <input type="checkbox" name="term2" class="term" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            개인 정보 이용약관 동의
+                            <input type="checkbox" name="term3" class="term" />
+                        </label>
+                    </div>
+                </form>
+            </body>
+            <script>
+                // 전체 동의 1개와 선택 동의 3개가 있다.
+                // 전체 동의를 체크하면, 선택 동의가 모두 체크되고,
+                // 전체 동의를 해제하면, 선택 동의가 모두 해제된다.
+                // 전체 동의 상태에서 선택 동의 하나라도 해제되면,
+                // 전체 동의도 체크가 해제된다.
+                // 전체 동의를 체크하지 않았더라도, 선택 동의를 모두 체크하면,
+                // 전체 동의도 체크된다.
+                NodeList.prototype.filter = Array.prototype.filter;
+
+                const all = document.querySelector("input.all");
+                const terms = document.querySelectorAll("input.term");
+
+                // all에 change 이벤트 리스너 추가
+                // 체크박스가 변경될 때마다 실행
+                all.addEventListener("change", (e) => {
+                    // all.checked가 true가 되면, terms.forEach를 사용하여
+                    // 모든 개별 체크박스들의 checked 속성을 true로 설정
+                    terms.forEach((term) => {
+                        term.checked = e.target.checked;
+                    });
+                });
+
+                // 각 개별 체크박스(terms)에 change 이벤트 리스너 추가
+                terms.forEach((term) => {
+                    term.addEventListener("change", (e) => {
+                        // 개별 체크박스에서 상태가 변경되면 all.checked의 값 업데이트
+                        all.checked =
+                            // filter는 checked가 true인 체크박스들을 필터링해 반환
+                            // 배열의 길이가 3이면 all.checked를 true로 설정
+                            terms.filter((term) => term.checked).length === 3;
+                    });
+                });
+            </script>
+        </html>
+    </body>
+</html>

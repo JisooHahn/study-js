@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>서비스 모듈화</title>
+        <style>
+            #photo-wrap {
+                width: 800px;
+                margin: 0 auto;
+            }
+
+            #photo-wrap > div {
+                float: left;
+                margin-right: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="get-photos">포토 가져오기</button>
+        <div id="photo-wrap"></div>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

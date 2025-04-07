@@ -1,0 +1,37 @@
+<!-- 사용자 ID가 1인 앨범 목록을 필터링하여 출력하세요.
+그 중에 title에 le가 포함된 앨범만 색을 파란색으로 바꾸고 강조하세요. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 개인실습4</title>
+        <style>
+            table {
+                margin: 10% auto;
+                border-collapse: collapse;
+                text-align: center;
+                width: 700px;
+                table-layout: fixed;
+                outline: none;
+                word-wrap: break-word;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            tr.on{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="get-table">앨범 불러오기</button>
+        <table id="album-table"></table>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>

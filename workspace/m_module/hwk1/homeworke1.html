@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>숙제 1</title>
+        <style>
+            table {
+                width: 50%;
+                margin: 0 auto;
+                border: 1px solid;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            title {
+                text-decoration: line-through;
+            }
+
+            tr,
+            td.complete {
+                border: 2px solid green;
+                color: black;
+            }
+            td.cancel {
+                border: 1px solid black;
+                text-decoration: line-through;
+            }
+
+            tr {
+                border: 1px solid black;
+                color: red;
+            }
+
+            tr.on {
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- todo 목록을 30개와 userId, title 두 개의 정보를 불러온뒤 
+         완료되지 않은 todo 내용의 title을 취소선을 그은 뒤, 내용을 빨간색으로 출력한다.
+         완료된 할 일의 내용, 테두리를 녹색으로 출력한다. -->
+
+        <button id="get-todos">할 일 목록 불러오기</button>
+        <table class="todos"></table>
+    </body>
+    <script src="homeworke_service.js"></script>
+    <script src="homeworke_layout.js"></script>
+    <script src="homeworke_event.js"></script>
+</html>
